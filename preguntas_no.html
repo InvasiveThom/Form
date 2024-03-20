@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .container h1 {
+        text-align: center;
+    }
+    .container label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .container input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .container textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Form</h1>
+    <form id="preguntasForm">
+        <label for="pregunta1">Why don't you?</label>
+        <br>
+        <textarea id="pregunta1" rows="4" required></textarea>
+        <br><br>
+        <label for="pregunta2">Will you consider starting listen to music in English to familiarize yourself with the language?</label>
+        <br>
+        <input type="radio" id="siEmail" name="pregunta2" value="si">
+        <label for="siEmail">Yes</label>
+        <input type="radio" id="noEmail" name="pregunta2" value="no">
+        <label for="noEmail">No</label>
+        <br><br>
+        <label for="pregunta3">What kind of genre will you start listen to in orden to learn English?</label>
+        <br>
+        <textarea id="pregunta3" rows="4" required></textarea>
+        <br><br>
+        <label for="pregunta4">Do you think music is a good tool to learn English?</label>
+        <br>
+        <input type="radio" id="siRecomendar" name="pregunta4" value="si">
+        <label for="siRecomendar">Yes</label>
+        <input type="radio" id="noRecomendar" name="pregunta4" value="no">
+        <label for="noRecomendar">No</label>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<script>
+    document.getElementById('preguntasForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const respuesta1 = document.getElementById('pregunta1').value;
+        const respuesta2 = document.querySelector('input[name="pregunta2"]:checked').value;
+        const respuesta3 = document.getElementById('pregunta3').value;
+        const respuesta4 = document.querySelector('input[name="pregunta4"]:checked').value;
+
+        // Ahora podrías hacer lo que quieras con las respuestas
+        console.log('Respuesta 1:', respuesta1);
+        console.log('Respuesta 2:', respuesta2);
+        console.log('Respuesta 3:', respuesta3);
+        console.log('Respuesta 4:', respuesta4);
+    });
+</script>
+</body>
+</html>

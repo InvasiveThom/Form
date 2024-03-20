@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+
+    .container label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .container input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Form</h1>
+    <form id="encuestaForm" onsubmit="redirectPage(event)">
+        <label for="nombre">Name:</label>
+        <input type="text" id="nombre" required><br>
+        <label for="ocupacion">Ocupation:</label>
+        <input type="text" id="ocupacion" required><br>
+        <label for="edad">Age:</label>
+        <input type="number" id="edad" required><br>
+        <p>Do you listen to music in English?</p>
+        <button type="submit" name="respuesta" value="si">Yes</button>
+        <button type="submit" name="respuesta" value="no">No</button>
+    </form>
+</div>
+<script>
+    function redirectPage(event) {
+        event.preventDefault();
+        const respuesta = event.submitter.value;
+        if (respuesta === 'si') {
+            window.location.href = 'preguntas_si.html';
+        } else if (respuesta === 'no') {
+            window.location.href = 'preguntas_no.html';
+        }
+    }
+</script>
+</body>
+</html>
